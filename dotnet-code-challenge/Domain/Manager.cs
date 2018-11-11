@@ -25,13 +25,13 @@ namespace dotnet_code_challenge.Domain
             {
                 var datasources = GetDatasources();
                 if (datasources == null) return null;
-                return GetHorseDetails(datasources).OrderBy(h=>h.Price);
+                GetHorseDetails(datasources).OrderBy(h=>h.Price);
             }
             catch(Exception e)
             {
                 //shout // yell // log //
             }
-            return null;
+            return _horseDetails;
         }
 
         IEnumerable<DatasourceDetail> GetDatasources()

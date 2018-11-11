@@ -13,7 +13,17 @@ namespace dotnet_code_challenge.Domain
     {
         public string GetDataContent(string filepath)
         {
-            return File.ReadAllText(filepath);
+            if (filepath == null) return null;
+            string fileData = null;
+            try
+            {
+                fileData= File.ReadAllText(filepath); 
+            }
+            catch (Exception)
+            {
+                //shout // yell // log //
+            }
+            return fileData;
         }
     }
 }

@@ -19,20 +19,27 @@ namespace dotnet_code_challenge.Domain
         {
             if (filesname == null) return null;
 
-            //read the json files
-            foreach (var filePath in filesname.FileNames)
+            try
             {
-                //get content and read each file
-                var jsonString = _dataContentReader.GetDataContent(filePath);
-
-                //TO-DO //format/restructure the data i.e in custom structure                
-                horseDetails.AddRange(_jsonDataExtractor.ExtractHorseDetail(jsonString));
-
-
+                ReadDetail(filesname);
+            }
+            catch (Exception)
+            {
+                //shout // yell // log //
             }
             return horseDetails;
         }
+        void ReadDetail(FileNameList filesname)
+        {
+                // read the json files
+                foreach (var filePath in filesname.FileNames)
+                {
+                    //get content and read each file
+                    var jsonString = _dataContentReader.GetDataContent(filePath);
 
-
+                    //TO-DO //format/restructure the data i.e in custom structure                
+                    horseDetails.AddRange(_jsonDataExtractor.ExtractHorseDetail(jsonString));
+                }
+        }
     }
 }

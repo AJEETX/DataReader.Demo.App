@@ -27,13 +27,13 @@ namespace dotnet_code_challenge.Domain
             IEnumerable<HorseDetail> horsesDetailList = null;
             try
             {
-                return horsesDetailList= DatasourceDictionary[datasource.FileType].ReadHorseDetail(datasource.FilesName);
+                horsesDetailList= DatasourceDictionary[datasource.FileType].ReadHorseDetail(datasource.FilesName);
             }
             catch (Exception e)
             {
                 //shout // yell // log //
             }
-            return null;
+            return horsesDetailList;
         }
 
 

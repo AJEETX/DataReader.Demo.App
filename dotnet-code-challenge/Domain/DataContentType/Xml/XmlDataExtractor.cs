@@ -13,9 +13,22 @@ namespace dotnet_code_challenge.Domain.DataContentType.Xml
     {
         public IEnumerable<HorseDetail> ExtractHorseDetail(string xmlString)
         {
+            if (xmlString == null) return null;
+            IEnumerable<HorseDetail> horseDetails = null;
+            try
+            {
+                horseDetails = ExtractDetail(xmlString);
+            }
+            catch (Exception)
+            {
+                //shout // yell // log //
+            }
+            return horseDetails;
+        }
+        IEnumerable<HorseDetail> ExtractDetail(string xmlString)
+        {
             //TO-DO//format/restructure the data i.e in custom structure
             return new List<HorseDetail>();
-
         }
     }
 }

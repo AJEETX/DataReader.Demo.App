@@ -1,5 +1,6 @@
 ﻿using dotnet_code_challenge.Domain.DataContentType.Xml;
 using dotnet_code_challenge.Models;
+using System;
 using System.Collections.Generic;
 
 namespace dotnet_code_challenge.Domain
@@ -17,16 +18,29 @@ namespace dotnet_code_challenge.Domain
 
         public IEnumerable<HorseDetail> ReadHorseDetail(FileNameList filesname)
         {
-            //read the xml files
-            foreach (var filePath in filesname.FileNames)
+            if (filesname == null) return null;
+
+            try
             {
-                //get content and read each file
-                var xmlString = _dataContentReader.GetDataContent(filePath);
-
-                horseDetails.AddRange(_xmlDataExtractor.ExtractHorseDetail(xmlString));
-
+                ReadDetail(filesname);
+            }
+            catch (Exception)
+            {
+                //shout // yell // log //
             }
             return horseDetails;
+        }
+        void ReadDetail(FileNameList filesname)
+        {
+                // read the json files
+                foreach (var filePath in filesname.FileNames)
+                {
+                    //get content and read each file
+                    var xmlString = _dataContentReader.GetDataContent(filePath);
+
+                    //TO-DO //format/restructure the data i.e in custom structure                
+                    horseDetails.AddRange(_xmlDataExtractor.ExtractHorseDetail(xmlString));
+                }
         }
     }
 }
