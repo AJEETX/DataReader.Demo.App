@@ -16,7 +16,7 @@ namespace dotnet_code_challenge.Testing.Test.Unit
         {
             //given
             var moqDatasourceManager = new Mock<IDatasourceManager>();
-            moqDatasourceManager.Setup(m => m.GetDatasources()).Returns(new List<DatasourceDetail>());
+            moqDatasourceManager.Setup(m => m.GetDatasourcesDetails()).Returns(new List<DatasourceDetail>());
 
             var moqSupervisor = new Mock<ISupervisor>();
             moqSupervisor.Setup(m => m.GetHorses(It.IsAny<DatasourceDetail>())).Returns(new List<HorseDetail>());

@@ -18,7 +18,7 @@ namespace dotnet_code_challenge.Testing.Test.Unit
             var sut = new DatasourceManager();
 
             //when
-            var result = sut.GetDatasources();
+            var result = sut.GetDatasourcesDetails();
 
             //then
             Assert.IsInstanceOfType(result, typeof(IEnumerable<DatasourceDetail>));

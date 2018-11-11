@@ -40,7 +40,7 @@ namespace dotnet_code_challenge.Domain
         IEnumerable<DatasourceDetail> GetDatasources()
         {
 
-            return _datasourceManager.GetDatasources();
+            return _datasourceManager.GetDatasourcesDetails();
 
         }
         IEnumerable<HorseDetail> GetHorseDetails(IEnumerable<DatasourceDetail> datasourceDetails)
