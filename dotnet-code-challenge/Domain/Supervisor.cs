@@ -18,6 +18,7 @@ namespace dotnet_code_challenge.Domain
         {
             _jsonDatasourceData = jsonDatasourceData;
             _xmlDatasourceData = xmlDatasourceData;
+            Get();
         }
         public IEnumerable<HorseDetail> GetHorses(DatasourceDetail datasource)
         {
@@ -26,7 +27,6 @@ namespace dotnet_code_challenge.Domain
             IEnumerable<HorseDetail> horsesDetailList = null;
             try
             {
-                Get();
                 return horsesDetailList= DatasourceDictionary[datasource.FileType].ReadHorseDetail(datasource.FilesName);
             }
             catch (Exception e)

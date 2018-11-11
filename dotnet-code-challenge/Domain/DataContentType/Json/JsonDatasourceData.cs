@@ -8,6 +8,7 @@ namespace dotnet_code_challenge.Domain
     public interface IJsonDatasourceData : IDatasourceData { }
     public class JsonDatasourceData : DatasourceDataBase, IJsonDatasourceData
     {
+
         public JsonDatasourceData(IDataContentReader dataContentReader) : base(dataContentReader)
         {
         }
