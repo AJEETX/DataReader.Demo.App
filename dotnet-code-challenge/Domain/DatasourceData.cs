@@ -9,7 +9,7 @@ namespace dotnet_code_challenge.Domain
     {
         IEnumerable<HorseDetail> ReadHorseDetail(IEnumerable<string> filesname);
     }
-    class XmlDatasourceData : IDatasourceData
+    public class XmlDatasourceData : IDatasourceData
     {
         public IEnumerable<HorseDetail> ReadHorseDetail(IEnumerable<string> filesname)
         {

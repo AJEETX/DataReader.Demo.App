@@ -9,7 +9,7 @@ namespace dotnet_code_challenge.Domain
     {
         IEnumerable<HorseDetail> GetHorses(DatasourceDetail datasource);
     }
-    class Supervisor : ISupervisor
+    public class Supervisor : ISupervisor
     {
         public IEnumerable<HorseDetail> GetHorses(DatasourceDetail datasource)
         {

@@ -17,6 +17,11 @@ namespace dotnet_code_challenge.Models
     public class DatasourceDetail
     {
         public FileType FileType { get; set; }
-        public List<string> FilesName { get; set; }
+        public IEnumerable<string> FilesName { get; set; }
+        public DatasourceDetail(FileType fileType,IEnumerable<string> filesName) 
+        {
+            FileType = fileType;
+            FilesName = filesName;
+        }
     }
 }
