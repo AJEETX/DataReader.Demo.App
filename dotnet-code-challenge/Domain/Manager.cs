@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 
 namespace dotnet_code_challenge.Domain
 {
@@ -25,9 +24,7 @@ namespace dotnet_code_challenge.Domain
             try
             {
                 var datasources = GetDatasources();
-
                 if (datasources == null) return null;
-
                 return GetHorseDetails(datasources).OrderBy(h=>h.Price);
             }
             catch(Exception e)
@@ -39,19 +36,14 @@ namespace dotnet_code_challenge.Domain
 
         IEnumerable<DatasourceDetail> GetDatasources()
         {
-
             return _datasourceManager.GetDatasourcesDetails();
-
         }
         IEnumerable<HorseDetail> GetHorseDetails(IEnumerable<DatasourceDetail> datasourceDetails)
         {
             foreach (var datasourceDetail in datasourceDetails)
             {
-
                 _horseDetails.AddRange(_supervisor.GetHorses(datasourceDetail));
-
             }
-
             return _horseDetails;
         }
     }
