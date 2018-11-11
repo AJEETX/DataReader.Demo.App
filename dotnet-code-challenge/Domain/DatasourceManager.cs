@@ -17,6 +17,7 @@ namespace dotnet_code_challenge.Domain
 
         public IEnumerable<DatasourceDetail> GetDatasourcesDetails()
         {
+            GetDatasources();
             return Datasources;
         }
         void GetDatasources()

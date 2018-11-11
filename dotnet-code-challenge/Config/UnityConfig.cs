@@ -15,6 +15,8 @@ namespace dotnet_code_challenge.Config
             container.RegisterType<IManager, Manager>();
             container.RegisterType<IDatasourceManager, DatasourceManager>();
             container.RegisterType<ISupervisor, Supervisor>();
+            container.RegisterType<IXmlDatasourceData, XmlDatasourceData>();
+            container.RegisterType<IJsonDatasourceData, JsonDatasourceData>();
             return container.Resolve<IManager>();
         }
 

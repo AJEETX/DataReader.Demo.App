@@ -5,6 +5,7 @@ using dotnet_code_challenge.Domain;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using dotnet_code_challenge.Models;
 using dotnet_code_challenge.Testing.Helper;
+using Moq;
 
 namespace dotnet_code_challenge.Testing.Test.Unit
 {
@@ -16,7 +17,14 @@ namespace dotnet_code_challenge.Testing.Test.Unit
         {
             //given
             var input = SampleData.GetListOfDatasourceDetail();
-            var sut = new Supervisor();
+
+            var moqJsonsourceData = new Mock<IJsonDatasourceData>();
+            moqJsonsourceData.Setup(m => m.ReadHorseDetail(It.IsAny<FileNameList>())).Returns(new List<HorseDetail>());
+
+            var moqXmlJsonsourceData = new Mock<IXmlDatasourceData>();
+            moqXmlJsonsourceData.Setup(m => m.ReadHorseDetail(It.IsAny<FileNameList>())).Returns(new List<HorseDetail>());
+
+            var sut = new Supervisor(moqJsonsourceData.Object,moqXmlJsonsourceData.Object);
 
             //when
             var result = sut.GetHorses(input);

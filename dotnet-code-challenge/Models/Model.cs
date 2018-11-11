@@ -14,6 +14,7 @@ namespace dotnet_code_challenge.Models
         JSON,
         XML
     }
+
     public class DatasourceDetail
     {
         public FileType FileType { get;private set; }
