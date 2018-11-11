@@ -24,7 +24,7 @@ namespace dotnet_code_challenge.Domain
         {
             Datasources.Add(new DatasourceDetail(FileType.JSON, Getfile("*.json")));
 
-            Datasources.Add(new DatasourceDetail(FileType.XML, Getfile("*.json")));
+            Datasources.Add(new DatasourceDetail(FileType.XML, Getfile("*.xml")));
         }
         FileNameList Getfile(string regex)
         {
