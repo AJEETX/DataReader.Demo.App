@@ -13,7 +13,7 @@ namespace dotnet_code_challenge
             {
                 Console.WriteLine($"HorseName: {horsedetail.Name} :: Price: {horsedetail.Price}");
             }
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("PLEASE DEBUG .....!");
         }
     }
 }
