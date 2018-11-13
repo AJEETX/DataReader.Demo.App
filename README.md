@@ -17,6 +17,10 @@ read data from various sources
 >   Open the solution file 'dotnet-code-challenge.sln' from VisualStudio 2017 
 
 >   Kindly place FeedData folder with the "bin/debug/netcoreapp2.0" location within both projects
+    
+    - Kindly build the solition file 
+    - Run in DEBUG MODE
+
 
 
 All set. 
