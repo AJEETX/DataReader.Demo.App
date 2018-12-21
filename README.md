@@ -7,6 +7,7 @@ read data from various sources
 
 
 > a simple console based system . reads data from various sources
+
 > uses strategy design to easily add/implement any new data-format 
 
 ##### Instruction
